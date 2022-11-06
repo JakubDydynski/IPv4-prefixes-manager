@@ -8,6 +8,12 @@ jak mamy sortowanie to można zmniejszyć złożoność obliczeniową check popr
 złożoność bsearcha to logn, obecnie złożoność funkcji check to około 2n
 
 
+Zamiast zmiennych globalnych mozemy stworzyć interfejs - funkcje typu init linked list która zwraca nam wskaźniki do struktur, które obecnie są globalne
+
+
+
+
+
 
 
 
@@ -20,6 +26,8 @@ złożoność bsearcha to logn, obecnie złożoność funkcji check to około 2n
 
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+notatki z implementacji
+
 
 
 //sortowanie
