@@ -1,0 +1,61 @@
+    //sortowanie
+    // wymyślić bo wersja poniżej ma inaczej liste bo ma tak head->1->2
+    //                                                 a u cb1->2->head
+    //
+    // ip_prefix_node_t* node = ip_prefix_list.head;
+    // ip_prefix_node_t* old_node = ip_prefix_list.head;
+    // while(node && node->ip.mask<mask)
+    // {
+    //   old_node=node;
+    //   node=node->next;
+    // }
+    // if(!ip_prefix_list.head || node==ip_prefix_list.head) //if 0 el lub 1
+    //   return
+
+
+
+     /*NOTE
+  1. For every prefix check the mask and according to mask you have number of bits that have to be the same in base and ip
+  1. if początek taki sam
+    1a. if koniec zawiera się w zbiorze a zbiór zawiera się od początku adresu (baza) do końca adresu ( baza + (32-mask)^2
+    mask tell us how much ip addresses can fit, base tell us from what address we start
+  */
+  /*
+
+  example:
+  32.64.128.0 = 0x 20.40.80.0
+  ip = 32.64.128.12 = 0x 20.40.80.0C
+
+  if (base>>(32-mask)) == (ip>>(32-mask))
+    if(ip-base<(32-mask)^2)
+
+  base<<mask
+  if (base&&ip)
+  */
+
+  
+  // VAR 2: POSORTOWANE
+  /*
+  tutaj własciwie jaka jest różnica? tylko taka że jak mamy bardzo dużo prefixów
+  to to lepiej działa
+  bo lecimy od początku lub końca czyli najmniejszego lub największego prefixu przez co Zawsze robimy maksymlanie pół listy
+  */
+
+  // dopisać sortowanie do add
+// poprawic del ?
+// dopisać bsearcha do check
+// spróbować coś z tablicami
+/*
+np struktura która ma tablicę (ze zmienna liczba el sprawdzic czy sie da)
+32 struktury i każda posrtowana
+minus tego rozwiązania to duża lizba symboli, pamieci zajmuje to tyle samo
+*/
+
+albo wymieniamy zlozonosc obliczeniowa na pamiec albo na odwrót zależy co jest priorytetem
+Do zaimplemenotwania
+
+zrobic strukture danych z sortowaniem potrzebne do tego nam jest head/tail, możemy sortować po bazie i mieć osobne struktury na każdą maskę.? Ale wtedy moze być problem z fragmentacją pamięci po mallocu.
+
+
+jak mamy sortowanie to można zmniejszyć złożoność obliczeniową check poprzez binary search
+złożoność bsearcha to logn, obecnie złożonośc to około 2n
