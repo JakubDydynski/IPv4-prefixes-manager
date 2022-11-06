@@ -1,16 +1,40 @@
-    //sortowanie
-    // wymyślić bo wersja poniżej ma inaczej liste bo ma tak head->1->2
-    //                                                 a u cb1->2->head
-    //
-    // ip_prefix_node_t* node = ip_prefix_list.head;
-    // ip_prefix_node_t* old_node = ip_prefix_list.head;
-    // while(node && node->ip.mask<mask)
-    // {
-    //   old_node=node;
-    //   node=node->next;
-    // }
-    // if(!ip_prefix_list.head || node==ip_prefix_list.head) //if 0 el lub 1
-    //   return
+albo wymieniamy zlozonosc obliczeniowa na pamiec albo na odwrót zależy co jest priorytetem
+Do zaimplemenotwania
+
+zrobic strukture danych z sortowaniem potrzebne do tego nam jest head/tail, możemy sortować po bazie i mieć osobne struktury na każdą maskę.? Ale wtedy moze być problem z fragmentacją pamięci po mallocu.
+
+
+jak mamy sortowanie to można zmniejszyć złożoność obliczeniową check poprzez binary search
+złożoność bsearcha to logn, obecnie złożoność funkcji check to około 2n
+
+
+
+
+
+
+
+
+
+
+
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+
+//sortowanie
+// wymyślić bo wersja poniżej ma inaczej liste bo ma tak head->1->2
+//                                                 a u cb1->2->head
+//
+// ip_prefix_node_t* node = ip_prefix_list.head;
+// ip_prefix_node_t* old_node = ip_prefix_list.head;
+// while(node && node->ip.mask<mask)
+// {
+//   old_node=node;
+//   node=node->next;
+// }
+// if(!ip_prefix_list.head || node==ip_prefix_list.head) //if 0 el lub 1
+//   return
 
 
 
@@ -50,12 +74,3 @@ np struktura która ma tablicę (ze zmienna liczba el sprawdzic czy sie da)
 32 struktury i każda posrtowana
 minus tego rozwiązania to duża lizba symboli, pamieci zajmuje to tyle samo
 */
-
-albo wymieniamy zlozonosc obliczeniowa na pamiec albo na odwrót zależy co jest priorytetem
-Do zaimplemenotwania
-
-zrobic strukture danych z sortowaniem potrzebne do tego nam jest head/tail, możemy sortować po bazie i mieć osobne struktury na każdą maskę.? Ale wtedy moze być problem z fragmentacją pamięci po mallocu.
-
-
-jak mamy sortowanie to można zmniejszyć złożoność obliczeniową check poprzez binary search
-złożoność bsearcha to logn, obecnie złożonośc to około 2n
